@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta charset="UTF-8">
+        <!-- viewport is the visable area on a screen, this sets the width to the width of the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nav Bar - Extending Lines</title>
+
+        <!-- External style sheet - this defines style for each element so everything can be changed in one place (overwrites inline syles) -->
+        <link rel="stylesheet" href="StyleSheet.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="box">
+            <h1>Higher Or Lower?</h1>
+            <span id="number"></span>
+            <div class="button-wrapper">
+                <button id="higher" onclick="checkAnswer(1)">Higher</button>
+                <button id="lower" onclick="checkAnswer(2)">Lower</button>
+            </div>
+            <p id="message"></p>
+            <p id="score">Sco: 0</p>
+        </div>
+
+        <script>
+        let score = 0;
+        let message = "Numbers are between 0 and 10"
+        document.getElementById("message").innerHTML = message ; 
+        document.getElementById("number").innerHTML = generateNumber();
+
+        function generateNumber() {
+            return Math.floor(Math.random() * Math.floor(11))
+		}
+
+        function checkAnswer(choice) {
+            const originalNumber = document.getElementById("number").innerHTML;
+            const newNumber = generateNumber();         
+
+            if(choice==1 && originalNumber<newNumber){
+                score +=1;
+                message = "Correct!";
+			} else if (choice==2 && originalNumber>newNumber){
+                score +=1;
+                message = "Correct!";
+			} else if (originalNumber == newNumber){
+                message = "Numbers are the same!";     
+			} else {
+                message = "Wrong!";
+            }
+            
+            document.getElementById("message").innerHTML = message ; 
+            document.getElementById("number").innerHTML = newNumber;
+            document.getElementById("score").innerHTML = "Score: " + score;
+		}
+        </script>
+
+    </body>
+</html>
