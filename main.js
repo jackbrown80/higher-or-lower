@@ -2,10 +2,10 @@ const buttons = document.querySelectorAll('.button');
 const numberDisplay = document.querySelector('.number');
 const body = document.querySelector('body');
 let message = document.querySelector('.message');
+let score = 0;
 
 numberDisplay.innerHTML = generateRandomNumber();
 
-let score = 0;
 
 function generateRandomNumber(){
     return Math.floor((Math.random() * 10) + 1);
@@ -28,11 +28,9 @@ function handleButtonClick(){
         body.classList.add('correct');
         setTimeout(function(){body.classList.remove('correct');}, 250);
     } else {
-
     }
-
     message.innerHTML = `Score: ${score}`;
     numberDisplay.innerHTML = newNumber;
 }
 
-buttons.forEach(button => button.addEventListener('click', handleButtonClick))
+buttons.forEach(button => button.addEventListener('click', handleButtonClick));
