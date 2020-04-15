@@ -1,11 +1,15 @@
+*{
+	box-sizing: border-box;
+}
 body{
-	background-color: #F0F0F0;
+	background-color: rgb(255, 255, 255);
 	font-family: 'Poppins', sans-serif;
 	margin: 0 !important;
 	padding: 0 !important;
 	display: flex;
 	justify-content: center;
-	align-content: center
+	align-content: center;
+	transition: background-color 50ms;
 }
 .box {
 	margin-top:15vh;
@@ -17,42 +21,47 @@ body{
 	text-align: center;
 	box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.6);
 }
-.box:hover {
-}
-h1 {
+
+.title {
 	font-size: 20px;
 	color: white;
 	margin-top: 10px;
-	background-color: ;
 }
-p {
+.message {
 	color: white;
+	margin-top: 25px;
 }
-span {
+.number {
 	display: block;
 	font-size: 125px;
 	color: 	#39FF14;
 	margin-top: -5px  !important;
 	padding: 0 !important;
-	background-color: ;
 }
 .button-wrapper {
 	display: flex;
 	justify-content: space-evenly;
 	margin-top: 0px;
 }
-.button-wrapper button {
-	width: 80px;
+.button {
+	width: 90px;
+	height: 30px;
 	font-family: 'Baloo Thambi 2', serif;
-	background-color: white;
+	background-color: rgb(212, 212, 212);
 	border: 0;
 	border-radius: 3px;
 	cursor: pointer;
-	transition: transform 400ms;
-	box-shadow: 0px 1px 1px white;
+	transition: transform 400ms, background-color 400ms;
+
 	font-weight: bold;
 }
 .button-wrapper button:hover {
 	transform: scale(1.05);
-
+	background-color: rgb(255, 255, 255);
+}
+.button-wrapper button:active {
+	background-color: rgba(255, 255, 255, 0.774);
+}
+.correct{
+	background-color: rgb(149, 231, 156);
 }

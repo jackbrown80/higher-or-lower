@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nav Bar - Extending Lines</title>
+    <title>Higher or Lower</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
@@ -13,14 +13,13 @@
 
 <body>
     <div class="box">
-        <h1>Higher Or Lower?</h1>
-        <span id="number"></span>
+        <h1 class="title">Higher Or Lower?</h1>
+        <div class="number">7</div>
         <div class="button-wrapper">
-            <button id="higher" onclick="checkAnswer(1)">Higher</button>
-            <button id="lower" onclick="checkAnswer(2)">Lower</button>
+            <button class="button higher">Higher</button>
+            <button class="button lower">Lower</button>
         </div>
-        <p id="message"></p>
-        <p id="score">Sco: 0</p>
+        <div class="message">Numbers are between 1 and 10!</div>
     </div>
 
     <script src="main.js"></script>
